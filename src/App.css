@@ -1,0 +1,30 @@
+*{
+  box-sizing:border-box;
+}
+
+body{
+  margin:0;
+  font-family:Arial,sans-serif;
+  background:#ffe6f0;
+}
+
+.container{
+  min-height:100vh;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+}
+
+h1{
+  color:#d63384;
+}
+
+button{
+  padding:12px 25px;
+  border:none;
+  border-radius:20px;
+  background:#ff8fab;
+  color:white;
+  cursor:pointer;
+}
