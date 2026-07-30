@@ -112,3 +112,67 @@ button:hover{
   padding:7px 12px;
   font-size:12px;
 }
+
+.product-form{
+  display:flex;
+  flex-direction:column;
+  gap:10px;
+  margin-top:15px;
+}
+
+.product-form input,
+.product-form select{
+  width:100%;
+  padding:10px 12px;
+  border:1px solid #f3c5d6;
+  border-radius:10px;
+  outline:none;
+  font-size:14px;
+}
+
+.product-form input:focus,
+.product-form select:focus{
+  border-color:#ff8fab;
+}
+
+.form-error{
+  margin:0;
+  color:#d63384;
+  font-size:13px;
+  font-weight:bold;
+}
+
+.submitted-products{
+  margin-top:20px;
+  text-align:left;
+}
+
+.submitted-products h3{
+  text-align:center;
+  font-size:18px;
+}
+
+.submitted-product{
+  display:flex;
+  flex-direction:column;
+  gap:3px;
+  padding:12px;
+  margin-top:8px;
+  background:#fff5f8;
+  border-radius:10px;
+}
+
+.submitted-product strong{
+  color:#555;
+  font-size:15px;
+}
+
+.submitted-product span{
+  color:#d63384;
+  font-size:14px;
+}
+
+.submitted-product small{
+  color:#888;
+  font-size:12px;
+}
