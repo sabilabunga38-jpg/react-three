@@ -2,6 +2,7 @@ import UseEffect from "./assets/components/UseEffect";
 import Conditional from "./assets/components/Conditional";
 import ListRendering from "./assets/components/ListRendering";
 import ProductForm from "./assets/components/ProductForm";
+import UserDirectory from "./assets/components/UserDirectory";
 import "./app.css";
 
 function App() {
@@ -11,6 +12,7 @@ function App() {
       <Conditional />
       <ListRendering />
       <ProductForm/>
+      <UserDirectory/>
     </div>
   );
 }
