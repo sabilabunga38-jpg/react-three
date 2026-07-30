@@ -16,7 +16,7 @@ function UseEffect() {
 
   return (
     <div className="container">
-      <h1>React Lanjutan - useEffect</h1>
+      <h3>React Lanjutan - useEffect</h3>
       <p>Halaman dibuka pada:</p>
       <h2>{date}</h2>
       <button onClick={changeTitle}>Ubah Judul Browser</button>
