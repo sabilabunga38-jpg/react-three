@@ -11,6 +11,64 @@ type User = {
   address: Address;
 };
 
+const basicUsers = [
+  {
+    name: "Sabila Bunga Sakinah",
+    email: "sabilabunga@gmail.com",
+    city: "Sukabumi"
+  },
+  {
+    name: "Ari Sigit Firdaus",
+    email: "arisigit@gmail.com",
+    city: "Sukabumi"
+  },
+  {
+    name: "Muhammad Alghifari",
+    email: "alghifari@gmail.com",
+    city: "Bandung"
+  },
+  {
+    name: "Siti Khumaera Mulyasari",
+    email: "sitikhumaera@gmail.com",
+    city: "Sukabumi"
+  },
+  {
+    name: "Salwa Mutiara Hikmah",
+    email: "salwamutiara@gmail.com",
+    city: "Cianjur"
+  },
+  {
+    name: "Nadilla Pristiani",
+    email: "nadillapristiani@gmail.com",
+    city: "Sukabumi"
+  },
+  {
+    name: "Aneira Huwaida Salsabila",
+    email: "aneirahuwaida@gmail.com",
+    city: "Bogor"
+  },
+  {
+    name: "Reysha Almaghfira",
+    email: "reyshaalmaghfira@gmail.com",
+    city: "Sukabumi"
+  },
+  {
+    name: "Aliya",
+    email: "aliya@gmail.com",
+    city: "Bandung"
+  },
+  {
+    name: "Ireena Feriska",
+    email: "ireenaferiska@gmail.com",
+    city: "Jakarta"
+  },
+  {
+    name: "Nurul Mutiara Azzahra",
+    email: "nurulmutiara@gmail.com",
+    city: "Sukabumi"
+  }
+];
+
 function UserDirectory() {
   const [users, setUsers] = useState<User[]>([]);
   const [search, setSearch] = useState("");
@@ -26,8 +84,21 @@ function UserDirectory() {
         }
         return response.json();
       })
-      .then((data: User[]) => {
-        setUsers(data);
+      .then((data) => {
+        if (!data || data.length === 0) {
+          throw new Error("Data pengguna kosong");
+        }
+
+        const updatedUsers: User[] = basicUsers.map((user, index) => ({
+          id: index + 1,
+          name: user.name,
+          email: user.email,
+          address: {
+            city: user.city
+          }
+        }));
+
+        setUsers(updatedUsers);
         setLoading(false);
       })
       .catch(() => {
@@ -82,9 +153,15 @@ function UserDirectory() {
       {selectedUser && (
         <div className="user-detail">
           <h4>Detail User</h4>
-          <p><strong>Nama:</strong> {selectedUser.name}</p>
-          <p><strong>Email:</strong> {selectedUser.email}</p>
-          <p><strong>Kota:</strong> {selectedUser.address.city}</p>
+          <p>
+            <strong>Nama:</strong> {selectedUser.name}
+          </p>
+          <p>
+            <strong>Email:</strong> {selectedUser.email}
+          </p>
+          <p>
+            <strong>Kota:</strong> {selectedUser.address.city}
+          </p>
           <button onClick={() => setSelectedUser(null)}>Tutup</button>
         </div>
       )}
